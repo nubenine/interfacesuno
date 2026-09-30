@@ -8,3 +8,12 @@
 // Si no tiene extensión o es otra, mostrará "Archivo de tipo desconocido".
 //################################################################################
 // Escribe tu código aquí
+
+
+const extension = prompt("Introduce el nombre del archivo: ").split(".")
+
+switch (extension[1].toLowerCase()){
+    case "txt":
+        console.log("Archivo de texto")
+	//... continuar asi
+}

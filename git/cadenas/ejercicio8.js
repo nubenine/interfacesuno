@@ -15,3 +15,5 @@ for (let i = 0; i < nombre.length; i++) {
     }
 }
 console.log(`${nombre}`)
+
+//sin acabar

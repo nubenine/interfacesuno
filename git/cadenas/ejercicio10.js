@@ -4,3 +4,14 @@
 // derecha que de derecha a izquierda).
 //################################################################################
 // Escribe tu código aquí
+
+
+let codigo = prompt("Dime tu codigo: ")
+codigo = codigo.toLowerCase()
+
+let invertido = codigo.split('').reverse().join('')
+if (codigo===invertido){
+    console.log("Codigo valido")
+} else {
+    console.log("Codigo invalido")
+}
