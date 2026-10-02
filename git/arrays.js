@@ -9,7 +9,7 @@
 //farenheit = (temp * 1.8) + 32
 // Fórmula: Math.random() * (max - min) + min
 
-/*
+
 let temperaturas = []
 let temperatura
 let farenheit
@@ -29,7 +29,15 @@ for (let i = 0; i < temperaturas.length; i++) {
         console.log(`${temperaturas[i]}ºC en farenheit: ${farenheit} (brrrr que frio fai leñe)`)
     }    
 }
-*/
+
+//corregido: 
+const temperaturas = Array.from({lenght: 7}, () => Math.floor(Math.random()*41)-5)
+temperaturas.forEach(t => {
+    const f = (t * 1.8 + 32).toFixed(1)
+    const categoria = t < 10 ? "brrrr que frio fai leñe" : t < 25 ? "estase ben che" : "fai calor"
+    console.log(`Temperatura: ${t}, ºC, Fahrenheit: ${f} (${categoria})`)
+})
+
 
 //################################################################################
 // EJERCICIO B
@@ -37,10 +45,10 @@ for (let i = 0; i < temperaturas.length; i++) {
 // pero invertidas letra a letra, y mostrar ambos vectores.
 //################################################################################
 
-/*
+
 let cadenas = []
 
-while (cadenas.length<1) {
+while (cadenas.length<5) {
     cadenas.push(prompt("Introduce una palabra o una frase"))
 }
 
@@ -50,7 +58,15 @@ let cadenasInvertidas = cadenas.map(cadena => {
 
 console.log(cadenas)
 console.log(cadenasInvertidas)
-*/
+
+
+//Corregido: 
+
+let vector = Array.from({lenght: 5}, (_, i) => prompt(`Introduce la ${i+1} cadena: `))
+
+const vector2 = vector.map((cadena) => cadena.split("").reverse().join(""))
+
+console.log(vector2)
 
 
 //################################################################################
@@ -58,7 +74,7 @@ console.log(cadenasInvertidas)
 // Leer 6 notas (0-10). Mostrar todas, la media, la más alta, la más baja
 // y cuántas son aprobado (>=5).
 //################################################################################
-/*
+
 let notas = []
 let total = 0
 let media
@@ -80,7 +96,19 @@ console.log(`Notas aprobadas: ${aprobadas}`)
 console.log(`Nota mas alta: ${Math.max(...notas)}`)
 console.log(`Nota mas baja: ${Math.min(...notas)}`)
 
-*/
+//corregido:
+
+let notas = Array.from({length: 6}, (_, i) => parseInt(prompt(`Dime la ${i + 1} nota`)))
+notas.forEach((x, i, _) => {
+    contNotas++
+    total += x
+    if (x>=5){
+        aprobadas++
+    }
+})
+
+//para sumar todo: let valorAcumulado = notas.reduce((x, y, i) => {x += y})
+
 
 
 //################################################################################
@@ -89,7 +117,7 @@ console.log(`Nota mas baja: ${Math.min(...notas)}`)
 // introduzca un 0. Mostrar los elementos introducidos y su suma.
 //################################################################################
 
-/*
+
 
 function checknull(numero) {
     return isNaN()
@@ -110,7 +138,7 @@ for (let i = 0; i < vector.length; i++) {
 }
 console.log(`Suma total: ${suma}`)
 
-*/
+
 
 //################################################################################
 // EJERCICIO E
@@ -135,7 +163,14 @@ console.log(`Media total: ${media}`)
 // o día laborable, usando un vector.
 //################################################################################
 
+//corregido (no tenia nada xd)
 
+const dias = [/*Dias de la semana en string*/]
+const finde = ["Sabado", "Domingo"]
+
+let dia = parseInt(prompt("Dime un dia por numero (0-7)"))
+
+//hacer un for con .includes
 
 //################################################################################
 // EJERCICIO G
@@ -143,10 +178,27 @@ console.log(`Media total: ${media}`)
 // vector3 = producto elemento a elemento, y la suma total (producto escalar).
 //################################################################################
 
+//corregido (no tenia nada x2 xdxd)
+let a = Array.from({length: 5}, () => parseInt(prompt(`Dime los valores del vector a`)))
+let b = Array.from({length: 5}, () => parseInt(prompt(`Dime los valores del vector b`)))
 
+const c = a.map((val, i) => val * b[i])
 
+const productoEscalar = c.reduce((acc, val) => acc + val, 0)
+console.log(`Vector 3: ${c}`)
+console.log(`Producto escalar: ${productoEscalar}`)
 //################################################################################
 // EJERCICIO H
 // Matriz 4x4 con valores aleatorios (1-9). Calcular la suma de la diagonal
 // principal y de la diagonal secundaria.
 //################################################################################
+
+//corregido (no tenia nada x3 xdxdxd)
+
+let matriz = Array.from({length: 4}, () => Array.from({length: 4}, () => Math.floor(Math.random() * 9) + 1))
+
+let diagonalPrincipal = matriz.reduce((suma, fila, i) => suma + fila[i])
+let diagonalSecundaria = matriz.reduce((suma, fila, i) => suma + fila[fila.length-1-i],0)
+
+console.log(matriz)
+console.log(`Diagonal principal: ${diagonalPrincipal}. Diagonal secundaria: ${diagonalSecundaria}`)
