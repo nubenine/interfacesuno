@@ -24,11 +24,17 @@ const productos = [
 // ----------------------------------------------------------------------------
 
 // Tu código aquí:
-function aplicarDescuento(productos) {
+const aplicarDescuento = (productos) => {
     let rebajados
     rebajados = productos.map(...(val, i) => val.categoria  === 'Equiamiento' ? val.precio *= 0.90 : val)
     return rebajados
 }
+console.log(`${aplicarDescuento(productos)}`)
+
+//corregido: 
+// 				const actualizado = productos.map((producto) => {
+  //				return (producto.categoria === 'Equipamiento')? {... producto, precio: producto.precio * 0.9}: producto)
+  //      }
 
 // ----------------------------------------------------------------------------
 // INSTRUCCIÓN 2: Formatear Mensajes
@@ -38,12 +44,12 @@ function aplicarDescuento(productos) {
 // ----------------------------------------------------------------------------
 
 // Tu código aquí:
-function generarEtiquetas(productos){
+const generarEtiquetas = (productos) => {
 	let consulta
     consulta = productos.map(({nombre, precio}, i) => `Producto: ${nombre} - Precio: ${precio}`)
     return consulta
 }
-
+console.log(`${generarEtiquetas(productos)}`)
 // ----------------------------------------------------------------------------
 // INSTRUCCIÓN 3: Reorganizar Elementos de Arrays
 // Dada la siguiente lista con los más vendidos:
@@ -57,7 +63,7 @@ const topVentas = ['Traje Espacial', 'Módulo de Oxígeno', 'Ración de Comida']
 
 // Tu código aquí:
 const [top1,,top3] = topVentas
-console.log(`-Top 1: ${top1}\n-Top 2: ${top2}`)
+console.log(`-Top 1: ${top1}\n-Top 3: ${top3}`)
 
 
 // ----------------------------------------------------------------------------
@@ -82,11 +88,13 @@ const inventarioCompleto = [...nuevosProductos, ...productos]
 // ----------------------------------------------------------------------------
 
 // Tu código aquí:
-function agregarEstadoStock(productos) {
+const agregarEstadoStock = (productos) => {
     let arrayobjetos
     arrayobjetos = productos.map((val,i) => productos.stock > 0 ? productos.enStock = true : productos.enStock = false)
     return arrayobjetos
 }
+
+console.log(`${agregarEstadoStock(productos)}`)
 
 // ----------------------------------------------------------------------------
 // INSTRUCCIÓN 6: Filtrar Disponibles
@@ -96,9 +104,11 @@ function agregarEstadoStock(productos) {
 // ----------------------------------------------------------------------------
 
 // Tu código aquí:
-function obtenerDisponibles(productos) {
-    
+const obtenerDisponibles = (productos) => {
+    return productos.filter(({stock}) => stock>0)
 }
+
+console.log(`${obtenerDisponibles(productos)}`)
 
 // ----------------------------------------------------------------------------
 // INSTRUCCIÓN 7: Ordenar por Precio
@@ -108,7 +118,13 @@ function obtenerDisponibles(productos) {
 // ----------------------------------------------------------------------------
 
 // Tu código aquí:
+const ordenarPorPrecioDesc = (productos) => {
+  let array
+  array = [...productos.precio]
+  return array.sort((a, b) => a.precio-b.precio)
+}
 
+console.log(`${ordenarPorPrecioDesc(productos)}`)
 
 // ----------------------------------------------------------------------------
 // INSTRUCCIÓN 8: Calcular Valor Total del Inventario (NUEVO)
@@ -119,3 +135,9 @@ function obtenerDisponibles(productos) {
 // ----------------------------------------------------------------------------
 
 // Tu código aquí:
+
+const calcularValorTotalInventario = (productos) => {
+  let array
+  array = [...productos.precio, ...precio.stock]
+
+}
