@@ -80,6 +80,8 @@ const nuevosProductos = [
 // Tu código aquí:
 const inventarioCompleto = [...nuevosProductos, ...productos]
 
+console.log(inventarioCompleto);
+
 // ----------------------------------------------------------------------------
 // INSTRUCCIÓN 5: Propiedad Calculada (enStock)
 // Crea una función flecha `agregarEstadoStock` que reciba el array de productos.
@@ -95,6 +97,13 @@ const agregarEstadoStock = (productos) => {
 }
 
 console.log(`${agregarEstadoStock(productos)}`)
+
+// corregido: 
+// 	const agregarEstadoStock = productos.map((producto) => {
+//     ...producto,
+//     enStock: producto.stock>0
+//   });
+// console.log(productos)
 
 // ----------------------------------------------------------------------------
 // INSTRUCCIÓN 6: Filtrar Disponibles
@@ -140,4 +149,11 @@ const calcularValorTotalInventario = (productos) => {
   let array
   array = [...productos.precio, ...precio.stock]
 
+
 }
+
+// corregido (no lo habia acabado): 
+// 	const calcularValorTotalInventario = (productos) => {
+//     return productos.reduce((total, {precio, stock}) => total + precio * stock, 0)
+//   }
+	
