@@ -1,35 +1,28 @@
-//perfil
-
-const nombre = "Nate Higgers"
-const foto = "/foto.jpg"
-const edad = 19
-const pais = "España"
-
+//perfil (funcions en maiusculas) 
+function chearBotons(ou){
+	const botons = []
+	for (let i = 0; i < 3; i++){
+		botons.push(<button className="square">{ou}</button>)
+		ou++
+	}
+	
+	return botons
+}
 export default function Perfil(){
+	let ou = 1
 	return (
 		<>
-			
-			<h1>{nombre}</h1>
-			<img src={foto} alt={nombre + ", " + edad + " años"}  width={100} style={{alignSelf:'center', position:'relative'}}/>
-			<p className="edad">Edad: {edad}</p>
-			<p className="pais">Pais: {pais}</p>
-			<p>Experiencia laboral: </p>
-			<ul className="experienciaLaboral">
-				<li></li>
-			</ul>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	<img src="/foto.jpg"/>
+    <div className="board-row">
+		{chearBotons(ou)}
+    </div>
+    <div className="board-row">    
+        {chearBotons(ou+=3)}
+    </div>
+    <div className="board-row">
+        {chearBotons(ou+=3)}
+    </div>        
+
 		</>
 	);
 }
