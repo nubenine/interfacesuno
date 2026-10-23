@@ -404,7 +404,7 @@ button:disabled {
 .instalacion img {
     width: 100%;
     height: 155px;
-    object-fit: cover;
+    object-fit:fill;
 }
 
 .instalacion-contenido {
