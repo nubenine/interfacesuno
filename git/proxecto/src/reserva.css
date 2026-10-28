@@ -451,8 +451,26 @@ button:disabled {
     padding: 12px 14px;
 }
 
+.boton-gris {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    border: solid 1px;
+    border-radius: 10px;
+    border-color: rgba(255, 37, 37, 0.479);
+    background: rgba(179, 173, 173, 0.493);
+    color: rgba(0, 0, 0, 0.582);
+    font-weight: bold;
+    padding: 12px 14px;
+}
+
 .boton-verde:hover {
     background: #09906f;
+}
+
+.boton-gris:hover{
+	cursor: not-allowed;
+  
 }
 
 .boton-secundario {

@@ -1,14 +1,15 @@
 
 import Pavillon from "./pavillon.jsx";
 import './reserva.css'
-function CrearInstalacion(nombre,img,emoji,descripcion,precio,dataInstalacion){
+function CrearInstalacion(nombre,img,emoji,descripcion,precio,dataInstalacion, disponibilidad){
     var instalacion = {
     	nombre: nombre,
     	img: img,
         emoji: emoji,
     	descripcion: descripcion,
 		precio: precio,
-    	dataInstalacion: dataInstalacion
+    	dataInstalacion: dataInstalacion,
+		disponibilidad: disponibilidad
 	}
     return instalacion
 }
@@ -18,10 +19,11 @@ const instalacion = {
         emoji: "🏟️",
     	descripcion: "s",
 		precio: 12,
-    	dataInstalacion: "aai"
+    	dataInstalacion: "aai",
+		disponibilidad: false
 }
 const pavillon = CrearInstalacion("Pavillón Municipal", "foto.jpg", "🏟️", "Espazo deportivo cuberto para fútbol sala, baloncesto e outras actividades.",
-		5.00, "pabellon")
+		5.00, "pabellon", true)
 let pistas = [instalacion,pavillon,pavillon,pavillon]
 let tarjetas = []
 

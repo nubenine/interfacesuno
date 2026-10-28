@@ -35,12 +35,9 @@ export default function Pavillon({instalacion}){
 
                     </div>
 
-                    <button className="
-                            boton-verde
-                            boton-reservar
-                        " data-instalacion={instalacion.dataInstalacion}>
+                    <button className={instalacion.disponibilidad ? "boton-verde" : "boton-gris"} data-instalacion={instalacion.dataInstalacion}>
 
-                        Reservar
+                        {instalacion.disponibilidad ? "Reservar" : "No disponible"}
 
                     </button>
 
