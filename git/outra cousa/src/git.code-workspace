@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../../Downloads/Tarefa 1.3.2 (1)/Tarefa 1.3.2"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#2b3038FF",
+			"titleBar.border": "#494f5800",
+			"titleBar.inactiveForeground": "#d5dee9FF",
+			"titleBar.inactiveBackground": "#232830FF",
+			"editorMultiCursor.primary.foreground": "#cad1daFF"
+		},
+		"editor.tokenColorCustomizations": {
+			"comments": "#74a4e2FF"
+		}
+	}
+}
