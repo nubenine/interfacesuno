@@ -1,12 +1,12 @@
 
-export default function ListaProductos({ productos }) {
+export default function ListaProductos({ products }) {
     return (
         <div>
-            {productos.length > 0 ? (
+            {products.length > 0 ? (
                 <ul>
-                    {productos.map((producto, index) => (
-                        <li key={index}>
-                            {producto}
+                    {products.map((producto, id) => (
+                        <li key={id}>
+                            {producto.name}
                         </li>
                     ))}
                 </ul>
